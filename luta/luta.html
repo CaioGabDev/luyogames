@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Mortal Kombat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.7.58/build/Tone.js"></script>
+    <link rel="stylesheet" href="luta.css">
+</head>
+<body>
+    <!-- Botão de voltar para o menu -->
+    <div class="back-button">
+        <a href="../game_hub/game_hub.html" class="back-link">
+            <span class="arrow">←</span> Voltar ao Menu
+        </a>
+    </div>
+
+    <div id="finishHim">FATALITY!</div>
+    <div id="messageBox" class="message-container">
+        <div id="homeScreenContent">
+            <h2 class="home-title">MORTAL KOMBAT</h2>
+            <p class="subtitle">Insira o nome dos jogadores:</p>
+            <div class="input-group">
+                <input type="text" id="player1NameInput" placeholder="JOGADOR 1" maxlength="15">
+                <input type="text" id="player2NameInput" placeholder="JOGADOR 2" maxlength="15">
+            </div>
+            <div class="button-group">
+                <button id="mainButton">JOGAR</button>
+                <button id="controlsButton">CONTROLES</button>
+            </div>
+        </div>
+        
+        <div id="characterSelectionScreenContent" style="display: none;">
+            <h2 class="home-title">ESCOLHA SEU LUTADOR</h2>
+            <p class="subtitle">Clique para selecionar seu personagem</p>
+            <div class="character-grid">
+                <div class="character-card" data-character="0">
+                    <img src="../public/felipe.png" alt="Felipe Dev" class="character-image">
+                    <div class="character-name">Felipe Dev</div>
+                    <div class="selection-marker-p1">P1</div>
+                    <div class="selection-marker-p2">P2</div>
+                </div>
+                <div class="character-card" data-character="1">
+                    <img src="../public/thiago.png" alt="Thiago" class="character-image">
+                    <div class="character-name">Thiago</div>
+                    <div class="selection-marker-p1">P1</div>
+                    <div class="selection-marker-p2">P2</div>
+                </div>
+                <div class="character-card" data-character="2">
+                    <img src="../public/marcelo.png" alt="Marcelo" class="character-image">
+                    <div class="character-name">Marcelo</div>
+                    <div class="selection-marker-p1">P1</div>
+                    <div class="selection-marker-p2">P2</div>
+                </div>
+                <div class="character-card" data-character="3">
+                    <img src="../public/eduardo.png" alt="Eduardo" class="character-image">
+                    <div class="character-name">Eduardo</div>
+                    <div class="selection-marker-p1">P1</div>
+                    <div class="selection-marker-p2">P2</div>
+                </div>
+            </div>
+            <div class="button-group">
+                <button id="confirmSelectionBtn" disabled>COMEÇAR LUTA</button>
+                <button id="backToHomeFromSelection">VOLTAR</button>
+            </div>
+        </div>
+
+        <div id="controlsScreenContent" style="display: none;">
+            <h2 class="home-title">CONTROLES</h2>
+            <div class="controls-list">
+                <p><strong>Jogador 1 (Esquerda):</strong></p>
+                <p>Movimento: W A S D</p>
+                <p>Soco: R | Chute: T</p>
+                <p>Projetil: Z</p>
+                <hr>
+                <p><strong>Jogador 2 (Direita):</strong></p>
+                <p>Movimento: ↑ ← ↓ →</p>
+                <p>Soco: K | Chute: L</p>
+                <p>Projetil: J</p>
+            </div>
+            <div class="button-group">
+                <button id="backToHomeFromControls">Voltar</button>
+            </div>
+        </div>
+
+        <div id="endGameContent" style="display: none;">
+            <h2 class="home-title" id="endGameTitle"></h2>
+            <div class="button-group">
+                <button id="playAgainButton">Jogar Novamente</button>
+                <button id="backToHomeButton">Voltar para Início</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container" style="display:none;">
+        <div class="ui-container">
+            <div class="player-info">
+                <div class="player-name" id="player1Name"></div>
+                <div class="health-bar-container p1">
+                    <div id="player1HealthBar"></div>
+                </div>
+                <div class="stamina-bar-container p1">
+                    <div id="player1StaminaBar"></div>
+                </div>
+            </div>
+            <div id="timer"></div>
+            <div class="player-info p2">
+                <div class="player-name p2" id="player2Name"></div>
+                <div class="health-bar-container">
+                    <div id="player2HealthBar"></div>
+                </div>
+                <div class="stamina-bar-container">
+                    <div id="player2StaminaBar"></div>
+                </div>
+            </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <script src="luta.js"></script>
+</body>
+</html>
