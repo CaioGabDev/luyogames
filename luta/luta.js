@@ -65,10 +65,10 @@ window.onload = function() {
 
     // Define os personagens com o caminho da imagem da cabeça
     const characters = [
-        { name: 'Felipe Dev', img: '../public/cabeca/cabeca2.png' },
-        { name: 'Thiago', img: '../public/cabeca/cabeca4.png' },
-        { name: 'Marcelo', img: '../public/cabeca/cabeca3.png' },
-        { name: 'Eduardo', img: '../public/cabeca/cabeca1.png' }
+        { name: 'Felipe Dev', img: '../images/cabeca/cabeca2.png' },
+        { name: 'Thiago', img: '../images/cabeca/cabeca4.png' },
+        { name: 'Marcelo', img: '../images/cabeca/cabeca3.png' },
+        { name: 'Eduardo', img: '../images/cabeca/cabeca1.png' }
     ];
 
     // Platforms
