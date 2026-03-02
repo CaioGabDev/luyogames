@@ -18,10 +18,10 @@ let players = [
 
 
 const characters = [
-    { name: 'Prof. Eduardo', img: new Image(), color: '#2ecc71', url: '../public/eduardo.png' },
-    { name: 'Prof. Felipe', img: new Image(), color: '#e67e22', url: '../public/felipe.png' },
-    { name: 'Prof. Marcelo', img: new Image(), color: '#3498db', url: '../public/marcelo.png' },
-    { name: 'Prof. Thiago', img: new Image(), color: '#3498db', url: '../public/thiago.png' },
+    { name: 'Prof. Eduardo', img: new Image(), color: '#2ecc71', url: '../images/eduardo.png' },
+    { name: 'Prof. Felipe', img: new Image(), color: '#e67e22', url: '../images/felipe.png' },
+    { name: 'Prof. Marcelo', img: new Image(), color: '#3498db', url: '../images/marcelo.png' },
+    { name: 'Prof. Thiago', img: new Image(), color: '#3498db', url: '../images/thiago.png' },
 ];
 
 
