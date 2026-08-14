@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Cabo de Guerra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cabodeguerra.css">
+</head>
+<body>
+    <div class="back-button">
+        <a href="../game_hub/game_hub.html" class="back-link">
+            <span class="arrow">←</span> Voltar ao Menu
+        </a>
+    </div>
+
+    <div id="messageBox" class="message-container">
+        <div id="homeScreenContent">
+            <h2 class="home-title">CABO DE GUERRA</h2>
+            <p class="subtitle">Insira o nome dos jogadores:</p>
+            <div class="input-group">
+                <input type="text" id="player1NameInput" placeholder="JOGADOR 1" maxlength="15">
+                <input type="text" id="player2NameInput" placeholder="JOGADOR 2" maxlength="15">
+            </div>
+            <div class="button-group">
+                <button id="mainButton">JOGAR</button>
+                <button id="controlsButton">CONTROLES</button>
+            </div>
+        </div>
+
+        <div id="characterSelectionScreenContent" style="display: none;">
+            <h2 class="home-title">ESCOLHA SEU LUTADOR</h2>
+            <p class="subtitle">Clique para selecionar seu personagem</p>
+            <div class="character-grid">
+                <div class="character-card" data-character="0">
+                    <img src="../images/felipe.png" alt="Felipe Dev" class="character-image">
+                    <div class="character-name">Felipe Dev</div>
+                    <div class="selection-marker-p1">P1</div>
+                    <div class="selection-marker-p2">P2</div>
+                </div>
+                <div class="character-card" data-character="1">
+                    <img src="../images/thiago.png" alt="Thiago" class="character-image">
+                    <div class="character-name">Thiago</div>
+                    <div class="selection-marker-p1">P1</div>
+                    <div class="selection-marker-p2">P2</div>
+                </div>
+                <div class="character-card" data-character="2">
+                    <img src="../images/marcelo.png" alt="Marcelo" class="character-image">
+                    <div class="character-name">Marcelo</div>
+                    <div class="selection-marker-p1">P1</div>
+                    <div class="selection-marker-p2">P2</div>
+                </div>
+                <div class="character-card" data-character="3">
+                    <img src="../images/eduardo.png" alt="Eduardo" class="character-image">
+                    <div class="character-name">Eduardo</div>
+                    <div class="selection-marker-p1">P1</div>
+                    <div class="selection-marker-p2">P2</div>
+                </div>
+            </div>
+            <div class="button-group">
+                <button id="confirmSelectionBtn" disabled>COMEÇAR</button>
+                <button id="backToHomeFromSelection">VOLTAR</button>
+            </div>
+        </div>
+
+        <div id="controlsScreenContent" style="display: none;">
+            <h2 class="home-title">CONTROLES</h2>
+            <div class="controls">
+                <div class="player-controls">
+                    <p><strong>Jogador 1 (Esquerda):</strong></p>
+                    <p>Puxar: <span class="key">SHIFT ESQUERDO</span> (aperte bem rápido!)</p>
+                </div>
+                <div class="player-controls">
+                    <p><strong>Jogador 2 (Direita):</strong></p>
+                    <p>Puxar: <span class="key">ENTER</span> (aperte bem rápido!)</p>
+                </div>
+            </div>
+            <p style="margin-top:15px;">Quem puxar a corda até o próprio lado primeiro, vence!</p>
+            <div class="button-group">
+                <button id="backToHomeFromControls">Voltar</button>
+            </div>
+        </div>
+
+        <div id="endGameContent" style="display: none;">
+            <h2 class="home-title" id="endGameTitle"></h2>
+            <div class="button-group">
+                <button id="playAgainButton">Jogar Novamente</button>
+                <button id="backToHomeButton">Voltar para Início</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container" style="display:none;">
+        <div class="ui-container">
+            <div class="player-info">
+                <div class="player-name" id="player1Name"></div>
+            </div>
+            <div id="timer">PUXA!</div>
+            <div class="player-info p2">
+                <div class="player-name p2" id="player2Name"></div>
+            </div>
+        </div>
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div id="countdownDisplay"></div>
+        </div>
+        <div class="mash-hint">
+            <span>Aperte <span class="key">SHIFT ESQ</span> repetidamente</span>
+            <span>Aperte <span class="key">ENTER</span> repetidamente</span>
+        </div>
+    </div>
+
+    <script src="cabodeguerra.js"></script>
+</body>
+</html>

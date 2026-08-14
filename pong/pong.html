@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Pong</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pong.css">
+</head>
+<body>
+    <div class="back-button">
+        <a href="../game_hub/game_hub.html" class="back-link">
+            <span class="arrow">←</span> Voltar ao Menu
+        </a>
+    </div>
+
+    <div id="messageBox" class="message-container">
+        <div id="homeScreenContent">
+            <h2 class="home-title">PONG</h2>
+            <p class="subtitle">Insira o nome dos jogadores:</p>
+            <div class="input-group">
+                <input type="text" id="player1NameInput" placeholder="JOGADOR 1" maxlength="15">
+                <input type="text" id="player2NameInput" placeholder="JOGADOR 2" maxlength="15">
+            </div>
+            <div class="button-group">
+                <button id="mainButton">JOGAR</button>
+                <button id="controlsButton">CONTROLES</button>
+            </div>
+        </div>
+
+        <div id="controlsScreenContent" style="display: none;">
+            <h2 class="home-title">CONTROLES</h2>
+            <div class="controls">
+                <div class="player-controls">
+                    <p><strong>Jogador 1 (Esquerda):</strong></p>
+                    <p>Subir: <span class="key">W</span></p>
+                    <p>Descer: <span class="key">S</span></p>
+                </div>
+                <div class="player-controls">
+                    <p><strong>Jogador 2 (Direita):</strong></p>
+                    <p>Subir: <span class="key">↑</span></p>
+                    <p>Descer: <span class="key">↓</span></p>
+                </div>
+            </div>
+            <p style="margin-top:15px;">Quem fizer 7 pontos primeiro, vence!</p>
+            <div class="button-group">
+                <button id="backToHomeFromControls">Voltar</button>
+            </div>
+        </div>
+
+        <div id="endGameContent" style="display: none;">
+            <h2 class="home-title" id="endGameTitle"></h2>
+            <div class="button-group">
+                <button id="playAgainButton">Jogar Novamente</button>
+                <button id="backToHomeButton">Voltar para Início</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container" style="display:none;">
+        <div class="ui-container">
+            <div class="player-info">
+                <div class="player-name" id="player1Name"></div>
+                <div class="score" id="player1Score">0</div>
+            </div>
+            <div id="timer">PRIMEIRO A 7</div>
+            <div class="player-info p2">
+                <div class="player-name p2" id="player2Name"></div>
+                <div class="score" id="player2Score">0</div>
+            </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <script src="pong.js"></script>
+</body>
+</html>
